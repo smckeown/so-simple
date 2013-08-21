@@ -1,0 +1,30 @@
+## Version 1.0.6
+- Removed Auto Updates in preperation for moving to the Creative Market.
+
+## Version 1.0.5
+- Very minor typography changes within "style.css".
+- Added responsive typography styles within "style.css" for smaller tables and mobile.
+- Post "Twitter Reply" options have been removed and are now available as an optional (free) add-on. See GetSoSimple.com for download.
+- Pagination has been added for those who don't want to display all their posts at once.
+
+## Version 1.0.4
+- Post & Page meta boxes are now powered by the "Advanced Custom Fields" plugin. You'll need to install and activate the ACF plugin.
+- Updated all custom fields with the "sst" prefix in order to eliminate any possible conflicts.
+- All "sst" functions within "functions.php" are now "pluggable" which means that you can now customize So Simple using a child theme.
+- Simplified post meta eliminating the need for Translations.
+- Updated post discussion functionality within "index.php" that auto-generates a Twitter discussion link for each post. Please note that you need to have your Twitter ID set within your author profile in order for this to work.
+- Added "404.php" which will redirect to the home page on 404's.
+- Got rid of the the "Infinite Scroll" function/script in exchange for just displaying all posts by default. There's nothing to load but text anyway, so we might as well simplify.
+  
+## Version 1.0.3
+- The "languages" folder (for translations) wasn't linked properly within "functions.php" which has been fixed.
+- A few functions have been optimized within "functions.php" to eliminate potential conflicts.
+
+## Version 1.0.2
+- Fixed a small admin bug that prevented the "Quick Edit" functionality from saving properly.
+
+## Version 1.0.1
+- Just a few minor typography changes within "style.css".
+
+## Version 1.0.0
+- The initial release for the So Simple theme. Let's do this thing.
