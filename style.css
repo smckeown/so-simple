@@ -1,382 +1,331 @@
-
-/********************************************************************************************
-
+/*
 Theme Name: So Simple
-Theme URI: http://getsosimple.com
+Theme URI: http://press75.com/view/so-simple/
+Author: Press75
+Author URI: http://press75.com
 Description: For beautiful text and absolutely nothing more. It's so simple.
-Version: 1.0.6
-Author: Jason Schuller
-Author URI: http://jason.sc
-License: GNU General Public License
+Version: 2.0.0
+License: GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: clearnews
+Domain Path: /languages/
+*/
 
-*********************************************************************************************/
 
-/* Normalization
-*********************************************************************************************/
+/**
+ * Normalization
+ * ----------------------------------------------------------------------------
+ */
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#444;}
 
-/* So Simple Setup :)
-*********************************************************************************************/
+article,aside,details,figcaption,figure,footer,header,main,nav,section {display: block;}
+
+
+/**
+ * So Simple Setup :)
+ * ----------------------------------------------------------------------------
+ */
 
 body {
-    background: #ffffff;
-    font: 200 18px/30px 'Lustria', serif;
-    color: rgba(0, 0, 0, 0.60);
-    padding: 0;   
+	background: #ffffff;
+	font: 200 18px/30px 'Lustria', serif;
+	color: rgba(0, 0, 0, 0.60);
+	padding: 0;   
 }
 
 h1, h2, h3 {
-    font-size: 28px;
-    line-height: 42px;
-    color: rgba(0, 0, 0, 0.70);
-    margin: 0 0 14px;
+	font-size: 28px;
+	line-height: 42px;
+	color: rgba(0, 0, 0, 0.70);
+	margin: 0 0 14px;
 }
 
 a {
-    color: rgba(0, 0, 0, 0.70);
-    text-decoration: none;
+	color: rgba(0, 0, 0, 0.70);
+	text-decoration: none;
 }
 
 a:hover {
-    color: rgba(0, 0, 0, 0.60);
+	color: rgba(0, 0, 0, 0.60);
 }
 
-/* Universal Content Containers
-*********************************************************************************************/
+
+/**
+ * Universal Content Containers
+ * ----------------------------------------------------------------------------
+ */
 
 header,
 article {
-    width: 60%;
-    padding: 8% 20%;
-    float: left;
-    position: relative;
-    -webkit-transition-duration: .2s;
-    -moz-transition-duration: .2s;
+	width: 60%;
+	padding: 8% 20%;
+	float: left;
+	position: relative;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
 }
 
 #articles article:nth-child(even) {
-    background-color: rgba(241, 241, 241, 0.2);
+	background-color: rgba(241, 241, 241, 0.2);
 }
 
 body.home #articles article:hover {
-    background-color: rgba(0, 0, 0, 0.03);
+	background-color: rgba(0, 0, 0, 0.03);
 }
 
 .permalink {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* Post Styles
-*********************************************************************************************/
-
-.words strong {
-    font-weight: bold;
-}
-
-.words a {
-    background-color: rgba(0, 0, 0, 0.03);
-}
-
-.words a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
-.words p {
-    margin-bottom: 20px;
-}
-
-.words ul,
-.words ol {
-    margin: 0 0 20px 40px;
-    color: rgba(0, 0, 0, 0.40);
-}
-
-.words ul li {
-    list-style: disc;
-}
-
-.words ol li {
-    list-style: decimal;
-}
-
-.words blockquote {
-    border-left: 5px solid rgba(0, 0, 0, 0.10);
-    color: rgba(0, 0, 0, 0.40);
-    padding-left: 40px;
-    margin-left: 40px;
-}
-
-.words img,
-.words iframe,
-.words object {
-    display: none;
-}
-
-ul.info {
-    font-size: 14px;
-    line-height: 22px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 
-ul.info,
-ul.info a {
-    color: rgba(0, 0, 0, 0.40);
+/**
+ * Post Styles
+ * ----------------------------------------------------------------------------
+ */
+
+.entry-content strong {
+	font-weight: bold;
 }
 
-ul.info a:hover {
-    color: rgba(0, 0, 0, 0.60);
+.entry-content a {
+	background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* Navigation
-*********************************************************************************************/
+.entry-content a:hover {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.entry-content p {
+	margin-bottom: 20px;
+}
+
+.entry-content ul,
+.entry-content ol {
+	margin: 0 0 20px 40px;
+	color: rgba(0, 0, 0, 0.40);
+}
+
+.entry-content ul li {
+	list-style: disc;
+}
+
+.entry-content ol li {
+	list-style: decimal;
+}
+
+.entry-content blockquote {
+	border-left: 5px solid rgba(0, 0, 0, 0.10);
+	color: rgba(0, 0, 0, 0.40);
+	padding-left: 40px;
+	margin-left: 40px;
+}
+
+ul.entry-meta {
+	font-size: 14px;
+	line-height: 22px;
+}
+
+ul.entry-meta,
+ul.entry-meta a {
+	color: rgba(0, 0, 0, 0.40);
+}
+
+ul.entry-meta a:hover {
+	color: rgba(0, 0, 0, 0.60);
+}
+
+.byline,
+.updated {
+	display: none;
+}
+
+
+/**
+ * Navigation
+ * ----------------------------------------------------------------------------
+ */
 
 nav,
 nav a {
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 100px;
-    width: 140px;
-    height: 140px;
-    position: fixed;
+	background-color: rgba(0, 0, 0, 0.05);
+	border-radius: 100px;
+	width: 140px;
+	height: 140px;
+	position: fixed;
 }
 
 nav a {
-    border: 20px solid rgba(0, 0, 0, 0.05);
-    width: 60px;
-    height: 60px;
-    -webkit-transition-duration: .5s;
-    -moz-transition-duration: .5s;
-    z-index: 110;
+	border: 20px solid rgba(0, 0, 0, 0.05);
+	width: 60px;
+	height: 60px;
+	-webkit-transition-duration: .5s;
+	-moz-transition-duration: .5s;
+	z-index: 110;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 40px solid rgba(0, 0, 0, 0.01);
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 40px solid rgba(0, 0, 0, 0.01);
 }
 
 nav.home {
-    bottom: -70px;
-    left: 50%;
-    margin-left: -70px;
-    z-index: 100;
+	bottom: -70px;
+	left: 50%;
+	margin-left: -70px;
+	z-index: 100;
 }
 
 nav.home a {
-    bottom: -50px;
-    left: 50%;
-    margin-left: -50px;
+	bottom: -50px;
+	left: 50%;
+	margin-left: -50px;
 }
 
 nav.home a:hover {
-    bottom: -70px;
-    margin-left: -70px;
+	bottom: -70px;
+	margin-left: -70px;
 }
 
 nav.previous,
 nav.next {
-    top: 50%;
-    margin-top: -70px;
+	top: 50%;
+	margin-top: -70px;
 }
 
 nav.previous {
-    left: -70px;
+	left: -70px;
 }
 
 nav.next {
-    right: -70px;
+	right: -70px;
 }
 
 nav.previous a,
 nav.next a {
-    top: 50%;
-    margin-top: -50px;
+	top: 50%;
+	margin-top: -50px;
 }
 
 nav.previous a:hover,
 nav.next a:hover {
-    margin-top: -70px;
+	margin-top: -70px;
 }
 
 nav.previous a {
-    left: -50px;
+	left: -50px;
 }
 
 nav.previous a:hover {
-    left: -70px;
+	left: -70px;
 }
 
 nav.next a {
-    right: -50px;
+	right: -50px;
 }
 
 nav.next a:hover {
-    right: -70px;
+	right: -70px;
 }
 
-/* Header Page Colors
-*********************************************************************************************/
 
-.green {
-    background-color: #58cb8e;
-}
-
-.blue {
-    background-color: #58beca;
-}
-
-.black {
-    background-color: #525252;
-}
-
-.green,
-.blue,
-.black {
-    color: rgba(255, 255, 255, 0.90);
-}
-
-.green a,
-.green h1,
-.blue a,
-.blue h1,
-.black a,
-.black h1 {
-    color: rgba(255, 255, 255, 0.95);
-}
-
-.green a,
-.blue a,
-.black a {
-    background-color: rgba(255, 255, 254, 0.1);
-}
-
-.green a:hover,
-.blue a:hover,
-.black a:hover {
-    color: rgba(255, 255, 255, 0.80);
-    background-color: rgba(255, 255, 254, 0.2);
-}
-
-.yellow {
-    background-color: #fff186;
-}
-
-.red {
-    background-color: #ffa385;
-}
-
-.yellow,
-.red {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.yellow a,
-.yellow h1,
-.red a,
-.red h1 {
-    color: rgba(0, 0, 0, 0.6);
-}
-
-.yellow a:hover,
-.red a:hover {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* For Screens 0px - 767px
-*********************************************************************************************/
+/**
+ * For Screens 0px - 767px
+ * ----------------------------------------------------------------------------
+ */
 
 @media screen and (min-width: 0px) and (max-width: 767px) {
-    
-    /* So Simple Setup :)
-    **********************************************/
-    
-    body {
-        font: 200 14px/24px 'Lustria', serif;
-    }
-    
-    h1, h2, h3 {
-        font-size: 22px;
-        line-height: 32px;
-        margin: 0 0 10px;
-    }
-    
-    /* Universal Content Containers
-    **********************************************/
-    
-    header,
-    article {
-        padding: 20% 20%;
-    }
-    
-    /* Post Styles
-    **********************************************/
-    
-    .words p,
-    .words ul,
-    .words ol {
-        margin-bottom: 14px;
-    }
-    
-    /* Navigation
-    **********************************************/
-    
-    nav,
-    nav a {
-        width: 100px;
-        height: 100px;
-    }
-    
-    nav a {
-        width: 20px;
-        height: 20px;
-    }
-    
-    nav.home {
-        bottom: -50px;
-        margin-left: -50px;
-    }
-    
-    nav.home a {
-        bottom: -30px;
-        margin-left: -30px;
-    }
-    
-    nav.home a:hover {
-        bottom: -50px;
-        margin-left: -50px;
-    }
-    
-    nav.previous {
-        left: -50px;
-    }
-    
-    nav.next {
-        right: -50px;
-    }
-    
-    nav.previous a,
-    nav.next a {
-        top: 50%;
-        margin-top: -50px;
-    }
-    
-    nav.previous a {
-        left: -30px;
-    }
-    
-    nav.previous a:hover {
-        left: -50px;
-    }
-    
-    nav.next a {
-        right: -30px;
-    }
-    
-    nav.next a:hover {
-        right: -50px;
-    }
-    
+
+	/* So Simple Setup :)
+	----------------------------------------------- */
+
+	body {
+		font: 200 14px/24px 'Lustria', serif;
+	}
+
+	h1, h2, h3 {
+		font-size: 22px;
+		line-height: 32px;
+		margin: 0 0 10px;
+	}
+
+	/* Universal Content Containers
+	----------------------------------------------- */
+
+	header,
+	article {
+		padding: 20% 20%;
+	}
+
+	/* Post Styles
+	----------------------------------------------- */
+
+	.entry-content p,
+	.entry-content ul,
+	.entry-content ol {
+		margin-bottom: 14px;
+	}
+
+	/* Navigation
+	----------------------------------------------- */
+
+	nav,
+	nav a {
+		width: 100px;
+		height: 100px;
+	}
+
+	nav a {
+		width: 20px;
+		height: 20px;
+	}
+
+	nav.home {
+		bottom: -50px;
+		margin-left: -50px;
+	}
+
+	nav.home a {
+		bottom: -30px;
+		margin-left: -30px;
+	}
+
+	nav.home a:hover {
+		bottom: -50px;
+		margin-left: -50px;
+	}
+
+	nav.previous {
+		left: -50px;
+	}
+
+	nav.next {
+		right: -50px;
+	}
+
+	nav.previous a,
+	nav.next a {
+		top: 50%;
+		margin-top: -50px;
+	}
+
+	nav.previous a {
+		left: -30px;
+	}
+
+	nav.previous a:hover {
+		left: -50px;
+	}
+
+	nav.next a {
+		right: -30px;
+	}
+
+	nav.next a:hover {
+		right: -50px;
+	}
 }

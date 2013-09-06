@@ -1,323 +1,96 @@
 <?php
+/**
+ * Clear News functions and definitions.
+ *
+ * @package So Simple
+ */
 
-/*-----------------------------------------------------------------------------------*/
-/* Check for the ACF Plugin
-/*-----------------------------------------------------------------------------------*/
 
-if (!function_exists('sst_acf_check')) {
-    function sst_acf_check() {
-    	if(!function_exists('register_field_group')) {
-    		add_thickbox(); // Required for the plugin install dialog.
-    		add_action( 'admin_notices', 'sst_acf_check_notice' );
-    	}
-    }
-}
-add_action('admin_init', 'sst_acf_check');
+/**
+ * Create "non-cachable" version ID.
+ * Helpful for caching issues in development.
+ */
+define( 'THEME_VERSION', '2.0.0' );
 
-if (!function_exists('sst_acf_check_notice')) {
-    function sst_acf_check_notice() {
-    	if(!current_user_can('install_plugins')) return;
-    ?>	
-    	<div class="updated fade">
-    		<p>The Advanced Custom Fields plugin is required in order for the So Simple theme to function properly. <a href="<?php echo admin_url('https://github.com/elliotcondon/acf/archive/master.zip'); ?>">Click Here</a> to download this required plugin.</p>
-    	</div>
-    
-    <?php
-    }
+function so_simple_version_id() {
+	if ( WP_DEBUG )
+		return time();
+	return THEME_VERSION;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/* Check for Pagination
-/*-----------------------------------------------------------------------------------*/
 
-if (!function_exists('sst_pagination')) {
-    function sst_pagination() {
-        global $wp_query;
-        return ($wp_query->max_num_pages > 1);
-    }
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 860;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*	Adding Twitter to Profile
-/*-----------------------------------------------------------------------------------*/
 
-if (!function_exists('sst_contact_info')) {
-    function sst_contact_info($contactmethods) {
-        
-        // Unset Irrelevant Methods
-        unset($contactmethods['aim']);
-        unset($contactmethods['yim']);
-        unset($contactmethods['jabber']);
-        
-        // Set Relevant Methods
-        $contactmethods['twitter'] = 'Twitter Username <span class="description">(required)</span>';
-        
-        // Do Work
-        return $contactmethods;
-    }
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ */
+function so_simple_setup() {
+	// Add support for translating strings in this theme.
+	load_theme_textdomain( 'so_simple', get_template_directory() . '/languages' );
+
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
 }
-add_filter('user_contactmethods', 'sst_contact_info');
+add_action( 'after_setup_theme', 'so_simple_setup' );
 
-/*-----------------------------------------------------------------------------------*/
-/*	Advanced Custom Fields
-/*-----------------------------------------------------------------------------------*/
 
-if(function_exists("register_field_group"))
-{
-	register_field_group(array (
-		'id' => '50afd9862cf85',
-		'title' => 'Page Options',
-		'fields' => 
-		array (
-			0 => 
-			array (
-				'key' => 'field_5064f73d7782a',
-				'label' => 'Add to Header Page Rotation',
-				'name' => 'sst_page_rotation',
-				'type' => 'true_false',
-				'order_no' => '0',
-				'instructions' => 'Check the box below to add this page for the So Simple theme home page header rotation.',
-				'required' => '0',
-				'conditional_logic' => 
-				array (
-					'status' => '0',
-					'allorany' => 'all',
-					'rules' => false,
-				),
-				'message' => 'Add to Rotation',
-			),
-			1 => 
-			array (
-				'key' => 'field_5065179131552',
-				'label' => 'Background Color',
-				'name' => 'sst_background_color',
-				'type' => 'select',
-				'order_no' => '1',
-				'instructions' => 'Select the background color for this page.',
-				'required' => '0',
-				'conditional_logic' => 
-				array (
-					'status' => '0',
-					'allorany' => 'all',
-					'rules' => false,
-				),
-				'choices' => 
-				array (
-					'white' => 'White',
-					'green' => 'Green',
-					'yellow' => 'Yellow',
-					'red' => 'Red',
-					'blue' => 'Blue',
-					'black' => 'Black',
-				),
-				'default_value' => 'green',
-				'allow_null' => '0',
-				'multiple' => '0',
-			),
-		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'page',
-					'order_no' => '0',
-				),
-			),
-			'allorany' => 'all',
-		),
-		'options' => 
-		array (
-			'position' => 'side',
-			'layout' => 'default',
-			'hide_on_screen' => 
-			array (
-				0 => 'excerpt',
-				1 => 'custom_fields',
-				2 => 'discussion',
-				3 => 'comments',
-				4 => 'slug',
-				5 => 'author',
-				6 => 'format',
-				7 => 'featured_image',
-			),
-		),
-		'menu_order' => 1,
-	));
-	register_field_group(array (
-		'id' => '50afd9862d554',
-		'title' => 'Permalink Options',
-		'fields' => 
-		array (
-			0 => 
-			array (
-				'key' => 'field_5064e71aabb67',
-				'label' => 'Permalink Override',
-				'name' => 'sst_permalink_override',
-				'type' => 'text',
-				'order_no' => '0',
-				'instructions' => 'Override the default permalink if you would like to link this post to some other page or website.',
-				'required' => '0',
-				'conditional_logic' => 
-				array (
-					'status' => '0',
-					'rules' => 
-					array (
-						0 => 
-						array (
-							'field' => '',
-							'operator' => '==',
-							'value' => '',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'default_value' => '',
-				'formatting' => 'none',
-			),
-		),
-		'location' => 
-		array (
-			'rules' => 
-			array (
-				0 => 
-				array (
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-					'order_no' => '0',
-				),
-			),
-			'allorany' => 'all',
-		),
-		'options' => 
-		array (
-			'position' => 'side',
-			'layout' => 'default',
-			'hide_on_screen' => 
-			array (
-				0 => 'excerpt',
-				1 => 'custom_fields',
-				2 => 'discussion',
-				3 => 'comments',
-				4 => 'slug',
-				5 => 'author',
-				6 => 'format',
-				7 => 'featured_image',
-				8 => 'categories',
-				9 => 'tags',
-				10 => 'send-trackbacks',
-			),
-		),
-		'menu_order' => 1,
-	));
+/**
+ * Returns the Google font stylesheet URL, if available.
+ *
+ * @return string Font stylesheet or empty string if disabled.
+ */
+function so_simple_fonts_url() {
+	$fonts_url = '';
+
+	/* translators: If there are characters in your language that are not supported
+	   by Lustria, translate this to 'off'. Do not translate into your own language. */
+	$lustria = _x( 'on', 'Lustria font: on or off', 'twentythirteen' );
+
+	if ( 'off' !== $lustria ) {
+		$query_args = array(
+			'family' => 'Lustria',
+		);
+
+		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
+	}
+
+	return $fonts_url;
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*	Hide Unused Admin Items Please
-/*-----------------------------------------------------------------------------------*/
 
-if (!function_exists('sst_hide_menus')) {
-    function sst_hide_menus() {
-    	global $current_user;
-    	get_currentuserinfo();
-    
-    	if($current_user->user_login = 'admin') {
-    		?>
-    		<style>
-    		#toplevel_page_edit-post_type-acf,
-    		#dashboard_quick_press .wp-media-buttons,
-    		#dashboard_quick_press div.input-text-wrap:last-child,
-    		#wp-content-media-buttons,
-    		#wp-admin-bar-new-media,
-    		#wp-admin-bar-new-link,
-    		#menu-appearance li,
-    		#menu-appearance .wp-submenu-wrap,
-    		#menu-appearance .wp-submenu,
-    		#menu-pages li,
-    		#menu-pages .wp-submenu-wrap,
-    		#menu-pages .wp-submenu,
-    		#menu-posts li,
-    		#menu-posts .wp-submenu-wrap,
-    		#menu-posts .wp-submenu,
-    		#pageparentdiv,
-    		#postcustom,
-    		#postexcerpt,
-    		#trackbacksdiv,
-    		.theme-options {
-    		display:none;
-    		}
-    		</style>
-    		<?php
-    	}
-    }
+/**
+ * Enqueue scripts and styles.
+ */
+function so_simple_scripts_styles() {
+	wp_enqueue_style( 'so-simple-fonts', so_simple_fonts_url(), array(), null );
+	wp_enqueue_style( 'so-simple-style', get_stylesheet_uri(), array(), so_simple_version_id() );
+
+	wp_enqueue_script( 'so-simple-script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), so_simple_version_id(), true );
 }
-add_action('admin_head', 'sst_hide_menus');
+add_action( 'wp_enqueue_scripts', 'so_simple_scripts_styles' );
 
-if (!function_exists('sst_remove_menus')) {
-    function sst_remove_menus () {
-    global $menu;
-    	$restricted = array(__('Links'), __('Comments'), __('Media'));
-    	end ($menu);
-    	while(prev($menu)){
-    		$value = explode(' ',$menu[key($menu)][0]);
-    		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
-    	}
-    }
+
+/**
+ * Output elements in the document head.
+ */
+function so_simple_document_head() {
+	echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . "\n";
+	echo '<link rel="pingback" href="' . esc_url( get_bloginfo( 'pingback_url' ) ) . '">' . "\n";
+
+	echo '<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->' . "\n";
+	echo '<script>document.documentElement.className = document.documentElement.className.replace(\'no-js\',\'js\');</script>' . "\n";
 }
-add_action('admin_menu', 'sst_remove_menus');
+add_action( 'wp_head', 'so_simple_document_head' );
 
-/*-----------------------------------------------------------------------------------*/
-/*	No Comments Please
-/*-----------------------------------------------------------------------------------*/
 
-// Posts & Pages
-if (!function_exists('sst_remove_comment_support')) {
-    function sst_remove_comment_support() {
-        remove_post_type_support( 'post', 'comments' );
-        remove_post_type_support( 'page', 'comments' );
-    }
-}
-add_action('init', 'sst_remove_comment_support');
-
-// Admin Bar
-if (!function_exists('sst_admin_bar_render')) {
-    function sst_admin_bar_render() {
-        global $wp_admin_bar;
-        $wp_admin_bar->remove_menu('comments');
-    }
-}
-add_action('wp_before_admin_bar_render', 'sst_admin_bar_render');
-
-/*-----------------------------------------------------------------------------------*/
-/*	No Categories or Tags Please
-/*-----------------------------------------------------------------------------------*/
-
-if (!function_exists('sst_unregister_taxonomy')) {
-    function sst_unregister_taxonomy(){
-        register_taxonomy('post_tag', array());
-        register_taxonomy('category', array());
-    }
-}
-add_action('init', 'sst_unregister_taxonomy');
-
-/*-----------------------------------------------------------------------------------*/
-/*	No Unrequired Dashboard Widgets Please
-/*-----------------------------------------------------------------------------------*/
-
-if (!function_exists('sst_remove_dashboard_widgets')) {
-    function sst_remove_dashboard_widgets() {
-    	global $wp_meta_boxes;
-    	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-    	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
-    	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
-    	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-    	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary']);
-    }
-}
-add_action('wp_dashboard_setup', 'sst_remove_dashboard_widgets');
-
-?>
+/**
+ * Load additional files and functions.
+ */
+require( get_template_directory() . '/includes/template-tags.php' );
+require( get_template_directory() . '/includes/customizer.php' );
