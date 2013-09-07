@@ -19,18 +19,12 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-		<?php if ( is_single() ) : ?>
-			<nav class="home">
-				<a href="<?php echo home_url(); ?>/"></a>
-			</nav>
-		<?php endif; ?>
+		<div id="page" class="hfeed site">
 
-		<header id="header">
-			<h1 class="title"><?php the_title() ?></h1>
+			<?php if ( is_home() && ! is_paged() && get_theme_mod( 'intro_page' ) ) : ?>
+				
+				<?php get_template_part( 'templates/parts/intro' ); ?>
 			
-			<div class="words">
-				<?php the_content(''); ?>
-			</div>
-		</header>
-		
-		<section id="articles">
+			<?php endif; ?>
+
+			<section id="content" class="site-content">

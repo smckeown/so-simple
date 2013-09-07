@@ -1,11 +1,9 @@
-<?php 
-
-/*-----------------------------------------------------------------------------------*/
-/* Redirect 404's Back Home
-/*-----------------------------------------------------------------------------------*/ 
-
-wp_redirect(home_url()); 
-
-exit; 
-
+<?php
+/**
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @package So Simple
+ */
 ?>
+
+<?php wp_redirect( home_url() ); exit; ?>

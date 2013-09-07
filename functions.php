@@ -32,12 +32,26 @@ if ( ! isset( $content_width ) ) {
  */
 function so_simple_setup() {
 	// Add support for translating strings in this theme.
-	load_theme_textdomain( 'so_simple', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'so-simple-i18n', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
+	// Add support for post thumbnails and register custom image sizes.
+	add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'so_simple_setup' );
+
+
+/**
+ * Sets up theme admin specific functions and features.
+ */
+function so_simple_admin_init() {
+	// Add custom metaboxes
+	require( get_template_directory() . '/includes/admin/functions.php' );
+	require( get_template_directory() . '/includes/admin/metabox.php' );
+}
+add_action( 'admin_init', 'so_simple_admin_init' );
 
 
 /**
@@ -93,4 +107,5 @@ add_action( 'wp_head', 'so_simple_document_head' );
  * Load additional files and functions.
  */
 require( get_template_directory() . '/includes/template-tags.php' );
+require( get_template_directory() . '/includes/extras.php' );
 require( get_template_directory() . '/includes/customizer.php' );

@@ -20,8 +20,4 @@
 		?>
 	</div><!-- .entry-content -->
 	
-	<footer class="entry-footer">
-		<?php get_template_part( 'templates/parts/entry', 'meta' ); ?>
-	</footer><!-- .entry-footer -->
-	
 </article>

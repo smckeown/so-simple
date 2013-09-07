@@ -11,12 +11,11 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function so_simple_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
+	/*
+	 * Creat theme seciton to hold our options.
+	 */
 	$wp_customize->add_section( 'theme', array(
-		'title'    => __( 'Theme', 'so-simple' ),
+		'title' => __( 'Theme', 'so-simple-i18n' ),
 	) );
 
 	/*
@@ -29,134 +28,72 @@ function so_simple_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'intro_page', array(
-		'label'    => __( 'Page for Intro', 'so-simple' ),
+		'label'    => __( 'Page for Intro', 'so-simple-i18n' ),
 		'section'  => 'theme',
 		'settings' => 'intro_page',
 		'type'     => 'dropdown-pages',
 		'priority' => 10,
 	) );
 
-	$wp_customize->add_setting( 'intro_format', array(
-		'capability'        => 'edit_theme_options',
+
+	/*
+	 * Colors
+	 */
+
+	$wp_customize->add_setting( 'intro_background_color', array( 
+		'default'           => "#58cb8e", 
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'intro_background_color', array(
+		'label'    => 'Intro Background Color',
+		'section'  => 'theme',
+		'settings' => 'intro_background_color',
+		'priority' => 10,
+	) )	);
+
+	$wp_customize->get_setting( 'intro_background_color' )->transport = 'postMessage';
+
+	$wp_customize->add_setting( 'intro_text_color', array(
+		'default'           => 'text-light',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'intro_format', array(
-		'label'    => __( 'Intro Format', 'so-simple' ),
+	$wp_customize->add_control( 'intro_text_color', array(
+		'label'    => __( 'Intro Text Color', 'so-simple-i18n' ),
 		'section'  => 'theme',
-		'settings' => 'intro_format',
-		'type'     => 'radio',
+		'settings' => 'intro_text_color',
+		'type'     => 'select',
 		'choices'  => array(
-			'standard' => __( 'Standard', 'so-simple' ),
-			'full'     => __( 'Full Width', 'so-simple' ),
+			'text-light' => __( 'Light Text', 'so-simple-i18n' ),
+			'text-dark'  => __( 'Dark Text', 'so-simple-i18n' ),
 		),
-		'priority' => 15,
-	) );
-
-	/*
-	 * Nav
-	 */
-	
-	$wp_customize->add_setting( 'search_in_nav', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
-	) );
-
-	$wp_customize->add_control( 'search_in_nav', array(
-		'label'    => __( 'Show search form in navigation.', 'so-simple' ),
-		'section'  => 'theme',
-		'settings' => 'search_in_nav',
-		'type'     => 'checkbox',
-		'priority' => 20,
-	) );
-
-	$wp_customize->add_setting( 'twitter_url', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
-	) );
-
-	$wp_customize->add_control( 'twitter_url', array(
-		'label'    => __( 'Twitter URL', 'so-simple' ),
-		'section'  => 'theme',
-		'settings' => 'twitter_url',
-		'type'     => 'text',
 		'priority' => 25,
 	) );
 
-	$wp_customize->add_setting( 'facebook_url', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
+
+	/*
+	 * Twitter Links
+	 */
+	$wp_customize->add_setting( 'twitter_link_type', array(
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
-	$wp_customize->add_control( 'facebook_url', array(
-		'label'    => __( 'Facebook URL', 'so-simple' ),
+	$wp_customize->add_control( 'twitter_link_type', array(
+		'label'    => __( 'Twitter Link Type', 'so-simple-i18n' ),
 		'section'  => 'theme',
-		'settings' => 'facebook_url',
-		'type'     => 'text',
+		'settings' => 'twitter_link_type',
+		'type'     => 'select',
+		'choices'  => array(
+			''           => __( '— Select —', 'so-simple-i18n' ),
+			'share'      => __( 'Share post', 'so-simple-i18n' ),
+			'reply-to'   => __( 'Reply to author', 'so-simple-i18n' ),
+			'reply-feed' => __( 'Twitter reply feed', 'so-simple-i18n' ),
+		),
 		'priority' => 30,
 	) );
 
-	$wp_customize->add_setting( 'gplus_url', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'esc_url_raw',
-	) );
 
-	$wp_customize->add_control( 'gplus_url', array(
-		'label'    => __( 'Google+ URL', 'so-simple' ),
-		'section'  => 'theme',
-		'settings' => 'gplus_url',
-		'type'     => 'text',
-		'priority' => 35,
-	) );
-
-	/*
-	 * Post & Pages
-	 */
-	
-	$wp_customize->add_setting( 'related_post_count', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
-	) );
-
-	$wp_customize->add_control( 'related_post_count', array(
-		'label'    => __( 'Related Post Count', 'so-simple' ),
-		'section'  => 'theme',
-		'settings' => 'related_post_count',
-		'type'     => 'text',
-		'priority' => 40,
-	) );
-
-	/*
-	 * Footer
-	 */
-	
-	$wp_customize->add_setting( 'footer_text_1', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'footer_text_1', array(
-		'label'    => __( 'Footer Text 1', 'so-simple' ),
-		'section'  => 'theme',
-		'settings' => 'footer_text_1',
-		'type'     => 'text',
-		'priority' => 45,
-	) );
-
-	$wp_customize->add_setting( 'footer_text_2', array(
-		'capability'        => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-		'transport'         => 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'footer_text_2', array(
-		'label'    => __( 'Footer Text 2', 'so-simple' ),
-		'section'  => 'theme',
-		'settings' => 'footer_text_2',
-		'type'     => 'text',
-		'priority' => 50,
-	) );
 }
 add_action( 'customize_register', 'so_simple_customize_register' );
 
@@ -165,6 +102,6 @@ add_action( 'customize_register', 'so_simple_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function so_simple_customize_preview_js() {
-	wp_enqueue_script( 'so_simple_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), so_simple_version_id(), true );
+	wp_enqueue_script( 'so-simple-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), so_simple_version_id(), true );
 }
 add_action( 'customize_preview_init', 'so_simple_customize_preview_js' );

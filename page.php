@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single posts.
+ * The template for displaying all pages.
  *
  * @package So Simple
  */
@@ -11,9 +11,7 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'templates/parts/content', 'single' ); ?>
-
-			<?php so_simple_pagination(); ?>
+			<?php get_template_part( 'templates/parts/content', 'page' ); ?>
 
 		<?php endwhile; ?>
 

@@ -7,7 +7,7 @@ Description: For beautiful text and absolutely nothing more. It's so simple.
 Version: 2.0.0
 License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: clearnews
+Text Domain: so-simple-i18n
 Domain Path: /languages/
 */
 
@@ -50,36 +50,79 @@ a:hover {
 	color: rgba(0, 0, 0, 0.60);
 }
 
+strong {
+	font-weight: bold;
+}
+
+p {
+	margin-bottom: 20px;
+}
+
+ul, ol {
+	margin: 0 0 20px 40px;
+}
+
+ol li {
+	list-style: decimal;
+}
+
+blockquote {
+	border-left: 5px solid rgba(0, 0, 0, 0.10);
+	color: rgba(0, 0, 0, 0.40);
+	padding-left: 40px;
+	margin-left: 40px;
+}
+
+
+/**
+ * Color Options
+ * ----------------------------------------------------------------------------
+ */
+
+.text-light {
+    color: rgba(255, 255, 255, 0.90);
+}
+
+.text-light a,
+.text-light h1 {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.text-light a {
+    background-color: rgba(255, 255, 254, 0.1);
+}
+
+.text-light a:hover {
+    color: rgba(255, 255, 255, 0.80);
+    background-color: rgba(255, 255, 254, 0.2);
+}
+
 
 /**
  * Universal Content Containers
  * ----------------------------------------------------------------------------
  */
 
-header,
-article {
+.hentry,
+.no-results {
 	width: 60%;
 	padding: 8% 20%;
 	float: left;
 	position: relative;
 	-webkit-transition-duration: .2s;
-	-moz-transition-duration: .2s;
+	        transition-duration: .2s;
 }
 
-#articles article:nth-child(even) {
+.site-content .hentry:nth-child(even) {
 	background-color: rgba(241, 241, 241, 0.2);
 }
 
-body.home #articles article:hover {
+.home .site-content .hentry:hover {
 	background-color: rgba(0, 0, 0, 0.03);
 }
 
-.permalink {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+.js-item-as-link {
+	cursor: pointer;
 }
 
 
@@ -87,10 +130,6 @@ body.home #articles article:hover {
  * Post Styles
  * ----------------------------------------------------------------------------
  */
-
-.entry-content strong {
-	font-weight: bold;
-}
 
 .entry-content a {
 	background-color: rgba(0, 0, 0, 0.03);
@@ -100,42 +139,21 @@ body.home #articles article:hover {
 	background-color: rgba(0, 0, 0, 0.05);
 }
 
-.entry-content p {
-	margin-bottom: 20px;
-}
-
-.entry-content ul,
-.entry-content ol {
-	margin: 0 0 20px 40px;
+.entry-meta {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	color: rgba(0, 0, 0, 0.40);
-}
-
-.entry-content ul li {
-	list-style: disc;
-}
-
-.entry-content ol li {
-	list-style: decimal;
-}
-
-.entry-content blockquote {
-	border-left: 5px solid rgba(0, 0, 0, 0.10);
-	color: rgba(0, 0, 0, 0.40);
-	padding-left: 40px;
-	margin-left: 40px;
-}
-
-ul.entry-meta {
 	font-size: 14px;
 	line-height: 22px;
 }
 
-ul.entry-meta,
-ul.entry-meta a {
+.entry-meta,
+.entry-meta a {
 	color: rgba(0, 0, 0, 0.40);
 }
 
-ul.entry-meta a:hover {
+.entry-meta a:hover {
 	color: rgba(0, 0, 0, 0.60);
 }
 
@@ -150,8 +168,8 @@ ul.entry-meta a:hover {
  * ----------------------------------------------------------------------------
  */
 
-nav,
-nav a {
+.nav span,
+.nav a {
 	background-color: rgba(0, 0, 0, 0.05);
 	border-radius: 100px;
 	width: 140px;
@@ -159,7 +177,7 @@ nav a {
 	position: fixed;
 }
 
-nav a {
+.nav a {
 	border: 20px solid rgba(0, 0, 0, 0.05);
 	width: 60px;
 	height: 60px;
@@ -168,67 +186,67 @@ nav a {
 	z-index: 110;
 }
 
-nav a:hover {
+.nav a:hover {
 	background-color: rgba(255, 255, 255, 0.1);
 	border: 40px solid rgba(0, 0, 0, 0.01);
 }
 
-nav.home {
+.single-nav {
 	bottom: -70px;
 	left: 50%;
 	margin-left: -70px;
 	z-index: 100;
 }
 
-nav.home a {
+.single-nav a {
 	bottom: -50px;
 	left: 50%;
 	margin-left: -50px;
 }
 
-nav.home a:hover {
+.single-nav a:hover {
 	bottom: -70px;
 	margin-left: -70px;
 }
 
-nav.previous,
-nav.next {
+.paged-nav .previous,
+.paged-nav .next {
 	top: 50%;
 	margin-top: -70px;
 }
 
-nav.previous {
-	left: -70px;
-}
-
-nav.next {
-	right: -70px;
-}
-
-nav.previous a,
-nav.next a {
+.paged-nav .previous a,
+.paged-nav .next a {
 	top: 50%;
 	margin-top: -50px;
 }
 
-nav.previous a:hover,
-nav.next a:hover {
+.paged-nav .previous a:hover,
+.paged-nav .next a:hover {
 	margin-top: -70px;
 }
 
-nav.previous a {
-	left: -50px;
-}
-
-nav.previous a:hover {
+.paged-nav .previous {
 	left: -70px;
 }
 
-nav.next a {
+.paged-nav .previous a {
+	left: -50px;
+}
+
+.paged-nav .previous a:hover {
+	left: -70px;
+}
+
+.paged-nav .next {
+	right: -70px;
+}
+
+.paged-nav .next a {
 	right: -50px;
 }
 
-nav.next a:hover {
+.paged-nav .next a:hover {
 	right: -70px;
 }
 
@@ -256,8 +274,8 @@ nav.next a:hover {
 	/* Universal Content Containers
 	----------------------------------------------- */
 
-	header,
-	article {
+	.site-header,
+	.hentry {
 		padding: 20% 20%;
 	}
 
