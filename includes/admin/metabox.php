@@ -1,4 +1,9 @@
 <?php
+/**
+ * Meta box setup and functions
+ *
+ * @package So Simple
+ */
 
 /**
  * Load metabox files

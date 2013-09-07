@@ -1,6 +1,6 @@
 <?php
 /**
- * Clear News functions and definitions.
+ * So Simple functions and definitions.
  *
  * @package So Simple
  */
@@ -43,15 +43,6 @@ function so_simple_setup() {
 add_action( 'after_setup_theme', 'so_simple_setup' );
 
 
-/**
- * Sets up theme admin specific functions and features.
- */
-function so_simple_admin_init() {
-	// Add custom metaboxes
-	require( get_template_directory() . '/includes/admin/functions.php' );
-	require( get_template_directory() . '/includes/admin/metabox.php' );
-}
-add_action( 'admin_init', 'so_simple_admin_init' );
 
 
 /**
@@ -109,3 +100,7 @@ add_action( 'wp_head', 'so_simple_document_head' );
 require( get_template_directory() . '/includes/template-tags.php' );
 require( get_template_directory() . '/includes/extras.php' );
 require( get_template_directory() . '/includes/customizer.php' );
+
+if ( is_admin() ) {
+	require( get_template_directory() . '/includes/admin/admin.php' );
+}

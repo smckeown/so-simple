@@ -1,5 +1,25 @@
 <?php
 /**
+ * Admin functions and definitions
+ *
+ * @package So Simple
+ */
+
+
+/**
+ * Include So Simple admin tweaks
+ */
+if ( ! get_theme_mod( 'disable_admin_teaks' ) ) {
+	require( get_template_directory() . '/includes/admin/tweaks.php' );
+}
+
+/**
+ * Include custom meta boxes
+ */
+require( get_template_directory() . '/includes/admin/metabox.php' );
+
+
+/**
  * Update Metabox Post Meta
  */
 function so_simple_update_post_meta_field( $fields, $post_id ) {

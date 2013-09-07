@@ -1,8 +1,8 @@
 <?php
 /**
- * Clear News Theme Customizer
+ * So Simple Theme Customizer
  *
- * @package clearnews
+ * @package So Simple
  */
 
 /**
@@ -19,6 +19,23 @@ function so_simple_customize_register( $wp_customize ) {
 	) );
 
 	/*
+	 * Admin
+	 */
+
+	$wp_customize->add_setting( 'disable_admin_teaks', array(
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( 'disable_admin_teaks', array(
+		'label'    => __( 'Disable So Simple admin tweaks', 'so-simple-i18n' ),
+		'section'  => 'theme',
+		'settings' => 'disable_admin_teaks',
+		'type'     => 'checkbox',
+		'priority' => 10,
+	) );
+
+
+	/*
 	 * Intro
 	 */
 
@@ -32,7 +49,7 @@ function so_simple_customize_register( $wp_customize ) {
 		'section'  => 'theme',
 		'settings' => 'intro_page',
 		'type'     => 'dropdown-pages',
-		'priority' => 10,
+		'priority' => 15,
 	) );
 
 
@@ -49,7 +66,7 @@ function so_simple_customize_register( $wp_customize ) {
 		'label'    => 'Intro Background Color',
 		'section'  => 'theme',
 		'settings' => 'intro_background_color',
-		'priority' => 10,
+		'priority' => 20,
 	) )	);
 
 	$wp_customize->get_setting( 'intro_background_color' )->transport = 'postMessage';
@@ -92,8 +109,6 @@ function so_simple_customize_register( $wp_customize ) {
 		),
 		'priority' => 30,
 	) );
-
-
 }
 add_action( 'customize_register', 'so_simple_customize_register' );
 

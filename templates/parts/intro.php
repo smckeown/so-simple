@@ -2,7 +2,7 @@
 /**
  * The template part for displaying an intro.
  *
- * @package clearnews
+ * @package So Simple
  */
 
 global $post;
