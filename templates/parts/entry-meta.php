@@ -5,5 +5,5 @@
 		<li class="twitter-link"><?php sosimple_twitter_link( $type, $post ); ?></li>
 	<?php endif; ?>
 	
-	<?php edit_post_link( __( 'Edit', 'so-simple-i18n' ), '<li class="edit-link">', '</li>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'sosimple' ), '<li class="edit-link">', '</li>' ); ?>
 </ul>

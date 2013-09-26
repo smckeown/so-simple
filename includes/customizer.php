@@ -15,7 +15,7 @@ function sosimple_customize_register( $wp_customize ) {
 	 * Creat theme seciton to hold our options.
 	 */
 	$wp_customize->add_section( 'theme', array(
-		'title' => __( 'Theme', 'so-simple-i18n' ),
+		'title' => __( 'Theme', 'sosimple' ),
 	) );
 
 	/*
@@ -27,7 +27,7 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'disable_admin_teaks', array(
-		'label'    => __( 'Disable So Simple admin tweaks', 'so-simple-i18n' ),
+		'label'    => __( 'Disable So Simple admin tweaks', 'sosimple' ),
 		'section'  => 'theme',
 		'settings' => 'disable_admin_teaks',
 		'type'     => 'checkbox',
@@ -45,7 +45,7 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'intro_page', array(
-		'label'    => __( 'Page for Intro', 'so-simple-i18n' ),
+		'label'    => __( 'Page for Intro', 'sosimple' ),
 		'section'  => 'theme',
 		'settings' => 'intro_page',
 		'type'     => 'dropdown-pages',
@@ -77,13 +77,13 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'intro_text_color', array(
-		'label'    => __( 'Intro Text Color', 'so-simple-i18n' ),
+		'label'    => __( 'Intro Text Color', 'sosimple' ),
 		'section'  => 'theme',
 		'settings' => 'intro_text_color',
 		'type'     => 'select',
 		'choices'  => array(
-			'text-light' => __( 'Light Text', 'so-simple-i18n' ),
-			'text-dark'  => __( 'Dark Text', 'so-simple-i18n' ),
+			'text-light' => __( 'Light Text', 'sosimple' ),
+			'text-dark'  => __( 'Dark Text', 'sosimple' ),
 		),
 		'priority' => 25,
 	) );
@@ -97,15 +97,15 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'twitter_link_type', array(
-		'label'    => __( 'Twitter Link Type', 'so-simple-i18n' ),
+		'label'    => __( 'Twitter Link Type', 'sosimple' ),
 		'section'  => 'theme',
 		'settings' => 'twitter_link_type',
 		'type'     => 'select',
 		'choices'  => array(
-			''           => __( '— Select —', 'so-simple-i18n' ),
-			'share'      => __( 'Share post', 'so-simple-i18n' ),
-			'reply-to'   => __( 'Reply to author', 'so-simple-i18n' ),
-			'reply-feed' => __( 'Twitter reply feed', 'so-simple-i18n' ),
+			''           => __( '— Select —', 'sosimple' ),
+			'share'      => __( 'Share post', 'sosimple' ),
+			'reply-to'   => __( 'Reply to author', 'sosimple' ),
+			'reply-feed' => __( 'Twitter reply feed', 'sosimple' ),
 		),
 		'priority' => 30,
 	) );

@@ -17,7 +17,7 @@ function sosimple_permalink_override_mb_field( $post_id ) {
 	$field_name = 'permalink_override';
 	$value = get_post_meta( $post_id, $field_name, true ); ?>
 	<p>
-		<label for="<?php echo esc_attr( $field_name ) ?>"><strong><?php _e( 'Permalink Override', 'so-simple-i18n' ); ?></strong></label><br />
+		<label for="<?php echo esc_attr( $field_name ) ?>"><strong><?php _e( 'Permalink Override', 'sosimple' ); ?></strong></label><br />
 		<input name="<?php echo esc_attr( $field_name ) ?>" id="<?php echo esc_attr( $field_name ) ?>" class="widefat" type="text" value="<?php echo esc_attr( $value ); ?>" placeholder="http://" />
 	</p>
 	
@@ -32,7 +32,7 @@ function sosimple_text_color_mb_field( $post_id ) {
 	$field_name = 'text_color';
 	$value = get_post_meta( $post_id, $field_name, true ); ?>
 	<p>
-		<label for="<?php echo esc_attr( $field_name ) ?>"><strong><?php _e( 'Text Color', 'so-simple-i18n' ); ?></strong></label><br />
+		<label for="<?php echo esc_attr( $field_name ) ?>"><strong><?php _e( 'Text Color', 'sosimple' ); ?></strong></label><br />
 		<select name="<?php echo esc_attr( $field_name ); ?>" id="<?php echo esc_attr( $field_name ); ?>" class="widefat">
 			<?php 
 			$options = array(

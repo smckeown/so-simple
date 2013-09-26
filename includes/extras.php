@@ -31,7 +31,7 @@ function sosimple_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'so-simple-i18n' ), max( $paged, $page ) );
+		$title .= " $sep " . sprintf( __( 'Page %s', 'sosimple' ), max( $paged, $page ) );
 
 	return $title;
 }

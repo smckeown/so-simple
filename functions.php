@@ -32,7 +32,7 @@ if ( ! isset( $content_width ) ) {
  */
 function sosimple_setup() {
 	// Add support for translating strings in this theme.
-	load_theme_textdomain( 'so-simple-i18n', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'sosimple', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -53,7 +53,7 @@ function sosimple_fonts_url() {
 
 	/* translators: If there are characters in your language that are not supported
 	   by Lustria, translate this to 'off'. Do not translate into your own language. */
-	$lustria = _x( 'on', 'Lustria font: on or off', 'so-simple-i18n' );
+	$lustria = _x( 'on', 'Lustria font: on or off', 'sosimple' );
 
 	if ( 'off' !== $lustria ) {
 		$query_args = array(

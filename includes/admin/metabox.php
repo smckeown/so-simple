@@ -25,6 +25,6 @@ function sosimple_meta_box_scripts( $hook ) {
  * Add meta boxes
  */
 function sosimple_add_meta_boxes( $post_type ) {
-	add_meta_box( 'sosimple_featured_video', __( 'Post Options', 'so-simple-i18n' ), 'sosimple_render_post_options_mb', 'post', 'side', 'default' );
+	add_meta_box( 'sosimple_featured_video', __( 'Post Options', 'sosimple' ), 'sosimple_render_post_options_mb', 'post', 'side', 'default' );
 }
 add_action( 'add_meta_boxes', 'sosimple_add_meta_boxes' );

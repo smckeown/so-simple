@@ -42,7 +42,7 @@ function sosimple_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( __( '<span class="posted-on">%1$s</span><span class="byline"> by %2$s</span>', 'so-simple-i18n' ),
+	printf( __( '<span class="posted-on">%1$s</span><span class="byline"> by %2$s</span>', 'sosimple' ),
 		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
 			esc_url( get_permalink() ),
 			esc_attr( get_the_time() ),
@@ -50,7 +50,7 @@ function sosimple_posted_on() {
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'so-simple-i18n' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'sosimple' ), get_the_author() ) ),
 			esc_html( get_the_author() )
 		)
 	);
@@ -93,7 +93,7 @@ if ( ! function_exists( 'sosimple_share_twitter_link' ) ) :
 function sosimple_share_twitter_link( $post = null ) {
 	$post = get_post( $post );
 	
-	$text = sprintf( __( "I'm reading %s", 'so-simple-i18n' ), wp_strip_all_tags( get_the_title( $post->ID ) ) );
+	$text = sprintf( __( "I'm reading %s", 'sosimple' ), wp_strip_all_tags( get_the_title( $post->ID ) ) );
 
 	$args = array(
 		'url'  => rawurlencode( get_permalink( $post->ID ) ),
@@ -104,8 +104,8 @@ function sosimple_share_twitter_link( $post = null ) {
 
 	printf( '<a href="%s" class="twitter-share js-popup" title="%s" target="_blank">%s</a>',
 		esc_url( $url ),
-		esc_attr__( 'Share on Twitter', 'so-simple-i18n' ),
-		esc_html( __( 'Share on Twitter', 'so-simple-i18n' ) )
+		esc_attr__( 'Share on Twitter', 'sosimple' ),
+		esc_html( __( 'Share on Twitter', 'sosimple' ) )
 	);
 }
 endif;
@@ -123,13 +123,13 @@ function sosimple_reply_to_twitter_link( $post = null ) {
 	// Bail early if a the authors Twitter username is not set in their profile. 
 	// Display a note to logged in users who can also manage options.
 	if ( ! $screen_name && current_user_can( 'manage_options' ) ) {
-		echo __( 'A <strong>Twitter ID</strong> is not set for this author.', 'so-simple-i18n' );
+		echo __( 'A <strong>Twitter ID</strong> is not set for this author.', 'sosimple' );
 		return;
 	}
 
 	$post = get_post( $post );
 
-	$text = sprintf( __( "Re: %s", 'so-simple-i18n' ), wp_strip_all_tags( get_the_title( $post->ID ) ) );
+	$text = sprintf( __( "Re: %s", 'sosimple' ), wp_strip_all_tags( get_the_title( $post->ID ) ) );
 
 	$args = array(
 		'screen_name' => rawurlencode( $screen_name ),
@@ -140,7 +140,7 @@ function sosimple_reply_to_twitter_link( $post = null ) {
 
 	printf( '<a href="%s" class="twitter-reply-to js-popup" title="%s" target="_blank" data-dnt="true">@%s</a>',
 		esc_url( $url ),
-		esc_attr__( 'Reply on Twitter', 'so-simple-i18n' ),
+		esc_attr__( 'Reply on Twitter', 'sosimple' ),
 		esc_html( $screen_name )
 	);
 
@@ -162,7 +162,7 @@ function sosimple_reply_feed_twitter_link( $post = null ) {
 	// Bail early if a the authors Twitter username is not set in their profile. 
 	// Display a note to logged in users who can also manage options.
 	if ( ! $screen_name && current_user_can( 'manage_options' ) ) {
-		echo __( 'A <strong>Twitter ID</strong> is not set for this author.', 'so-simple-i18n' );
+		echo __( 'A <strong>Twitter ID</strong> is not set for this author.', 'sosimple' );
 		return;
 	}
 
@@ -183,7 +183,7 @@ function sosimple_reply_feed_twitter_link( $post = null ) {
 
 	printf( '<a href="%s" class="twitter-reply-feed js-popup" title="%s" target="_blank">@%s</a>',
 		esc_url( $url ),
-		esc_attr__( 'Reply on Twitter', 'so-simple-i18n' ),
+		esc_attr__( 'Reply on Twitter', 'sosimple' ),
 		esc_html( $screen_name )
 	);
 }

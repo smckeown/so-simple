@@ -19,10 +19,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content content">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'so-simple-i18n' ) ); ?>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'sosimple' ) ); ?>
 		<?php
 		wp_link_pages( array(
-			'before' => '<p class="page-links">' . __( 'Pages:', 'so-simple-i18n' ),
+			'before' => '<p class="page-links">' . __( 'Pages:', 'sosimple' ),
 			'after'  => '</p>',
 		) );
 		?>

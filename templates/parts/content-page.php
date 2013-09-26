@@ -14,7 +14,7 @@
 		<?php the_content(); ?>
 		<?php
 		wp_link_pages( array(
-			'before' => '<p class="page-links">' . __( 'Pages:', 'so-simple-i18n' ),
+			'before' => '<p class="page-links">' . __( 'Pages:', 'sosimple' ),
 			'after'  => '</p>',
 		) );
 		?>
