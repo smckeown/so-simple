@@ -2,7 +2,7 @@
 /**
  * Custom template tags.
  *
- * @package So Simple
+ * @package sosimple
  */
 
 if ( ! function_exists( 'sosimple_pagination' ) ) :

@@ -2,7 +2,7 @@
 /**
  * The template part for displaying an intro.
  *
- * @package So Simple
+ * @package sosimple
  */
 
 global $post;

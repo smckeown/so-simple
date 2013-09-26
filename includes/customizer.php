@@ -2,7 +2,7 @@
 /**
  * So Simple Theme Customizer
  *
- * @package So Simple
+ * @package sosimple
  */
 
 /**

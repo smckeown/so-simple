@@ -2,7 +2,7 @@
 /**
  * Custom functions that act independently of the theme templates.
  *
- * @package So Simple
+ * @package sosimple
  */
 
 

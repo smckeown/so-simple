@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages.
  *
- * @package So Simple
+ * @package sosimple
  */
 
 get_header(); ?>

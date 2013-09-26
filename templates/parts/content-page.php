@@ -1,6 +1,6 @@
 <?php
 /**
- * @package So Simple
+ * @package sosimple
  */
 ?>
 

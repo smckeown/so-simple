@@ -2,7 +2,7 @@
 /**
  * Meta box setup and functions
  *
- * @package So Simple
+ * @package sosimple
  */
 
 /**

@@ -2,7 +2,7 @@
 /**
  * So Simple functions and definitions.
  *
- * @package So Simple
+ * @package sosimple
  */
 
 

@@ -2,7 +2,7 @@
 /**
  * Admin functions and definitions
  *
- * @package So Simple
+ * @package sosimple
  */
 
 

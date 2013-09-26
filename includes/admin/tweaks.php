@@ -2,7 +2,7 @@
 /**
  * Admin display tweaks
  *
- * @package So Simple
+ * @package sosimple
  */
 
 
