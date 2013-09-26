@@ -71,10 +71,10 @@ function sosimple_fonts_url() {
  * Enqueue scripts and styles.
  */
 function sosimple_scripts_styles() {
-	wp_enqueue_style( 'so-simple-fonts', sosimple_fonts_url(), array(), null );
-	wp_enqueue_style( 'so-simple-style', get_stylesheet_uri(), array(), sosimple_version_id() );
+	wp_enqueue_style( 'sosimple-fonts', sosimple_fonts_url(), array(), null );
+	wp_enqueue_style( 'sosimple-style', get_stylesheet_uri(), array(), sosimple_version_id() );
 
-	wp_enqueue_script( 'so-simple-script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), sosimple_version_id(), true );
+	wp_enqueue_script( 'sosimple-script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), sosimple_version_id(), true );
 }
 add_action( 'wp_enqueue_scripts', 'sosimple_scripts_styles' );
 
