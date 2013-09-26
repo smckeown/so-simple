@@ -9,31 +9,31 @@
 /**
  * Remove contact methods
  */
-function so_simple_remove_user_contactmethods( $contactmethods ) {
+function sosimple_remove_user_contactmethods( $contactmethods ) {
 	unset( $contactmethods['aim'] );
 	unset( $contactmethods['yim'] );
 	unset( $contactmethods['jabber'] );
 
 	return $contactmethods;
 }
-add_filter( 'user_contactmethods', 'so_simple_remove_user_contactmethods' );
+add_filter( 'user_contactmethods', 'sosimple_remove_user_contactmethods' );
 
 
 /**
  * Remove top-level menu pages
  */
-function so_simple_remove_menu_pages() {
+function sosimple_remove_menu_pages() {
 	remove_menu_page( 'upload.php' );        // Media
 	remove_menu_page( 'link-manager.php' );  // Links
 	remove_menu_page( 'edit-comments.php' ); // Comments
 }
-add_action( 'admin_menu', 'so_simple_remove_menu_pages', 999 );
+add_action( 'admin_menu', 'sosimple_remove_menu_pages', 999 );
 
 
 /**
  * Remove sub-menu pages
  */
-function so_simple_remove_submenu_pages() {
+function sosimple_remove_submenu_pages() {
 	/* Posts */
 	remove_submenu_page( 'edit.php', 'post-new.php' );                    // Add new
 	remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' ); // Categories
@@ -46,23 +46,23 @@ function so_simple_remove_submenu_pages() {
 	remove_submenu_page( 'themes.php', 'customize.php' ); // Customize
 
 }
-add_action( 'admin_menu', 'so_simple_remove_submenu_pages', 999 );
+add_action( 'admin_menu', 'sosimple_remove_submenu_pages', 999 );
 
 
 /**
  * Remove Comment post type support
  */
-function so_simple_remove_commment_post_type_support() {
+function sosimple_remove_commment_post_type_support() {
 	remove_post_type_support( 'post', 'comments' );
 	remove_post_type_support( 'page', 'comments' );
 }
-add_action( 'init', 'so_simple_remove_commment_post_type_support' );
+add_action( 'init', 'sosimple_remove_commment_post_type_support' );
 
 
 /**
  * Remove Post meta boxes
  */
-function so_simple_remove_meta_boxes() {
+function sosimple_remove_meta_boxes() {
 	// Tags are used for the Twitter Reply Feed option, don't remove if enabled
 	if ( 'reply-feed' != get_theme_mod( 'twitter_link_type' ) ) {
 		remove_meta_box( 'tagsdiv-post_tag', 'post', 'side' ); // tags
@@ -81,13 +81,13 @@ function so_simple_remove_meta_boxes() {
 	remove_meta_box( 'slugdiv',          'page', 'normal' ); // Slug
 	remove_meta_box( 'authordiv',        'page', 'normal' ); // Author
 }
-add_action( 'admin_menu', 'so_simple_remove_meta_boxes' );
+add_action( 'admin_menu', 'sosimple_remove_meta_boxes' );
 
 
 /**
  * Remove dashbaord meta boxes
  */
-function so_simple_remove_dashboard_meta_boxes() {
+function sosimple_remove_dashboard_meta_boxes() {
 	remove_meta_box('dashboard_right_now',       'dashboard', 'normal'); // Right Now
     remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
     remove_meta_box('dashboard_incoming_links',  'dashboard', 'normal'); // Incoming Links
@@ -97,6 +97,6 @@ function so_simple_remove_dashboard_meta_boxes() {
     remove_meta_box('dashboard_primary',         'dashboard', 'side');   // WordPress blog
     remove_meta_box('dashboard_secondary',       'dashboard', 'side');   // Other WordPress News	
 }
-add_action( 'wp_dashboard_setup', 'so_simple_remove_dashboard_meta_boxes' );
+add_action( 'wp_dashboard_setup', 'sosimple_remove_dashboard_meta_boxes' );
 
 

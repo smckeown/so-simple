@@ -13,7 +13,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'templates/parts/content', 'single' ); ?>
 
-			<?php so_simple_pagination(); ?>
+			<?php sosimple_pagination(); ?>
 
 		<?php endwhile; ?>
 

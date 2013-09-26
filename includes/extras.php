@@ -15,7 +15,7 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 /**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  */
-function so_simple_wp_title( $title, $sep ) {
+function sosimple_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
@@ -35,7 +35,7 @@ function so_simple_wp_title( $title, $sep ) {
 
 	return $title;
 }
-add_filter( 'wp_title', 'so_simple_wp_title', 10, 2 );
+add_filter( 'wp_title', 'sosimple_wp_title', 10, 2 );
 
 
 /**
@@ -44,7 +44,7 @@ add_filter( 'wp_title', 'so_simple_wp_title', 10, 2 );
  *
  * @return string
  */
-function so_simple_embed_html( $html, $url = null ) {
+function sosimple_embed_html( $html, $url = null ) {
 	$wrapped = '<div class="video-embed">' . $html . '</div>';
 
 	if ( empty( $url ) && 'video_embed_html' == current_filter() ) { // Jetpack
@@ -55,7 +55,7 @@ function so_simple_embed_html( $html, $url = null ) {
 		foreach ( $players as $player ) {
 			if ( false !== strpos( $url, $player ) ) {
 				if ( false !== strpos( $url, 'youtube' ) && false !== strpos( $html, '<iframe' ) && false === strpos( $html, 'wmode' ) ) {
-					$html = preg_replace_callback( '|https?://[^"]+|im', 'so_simple_oembed_youtube_wmode_parameter', $html );
+					$html = preg_replace_callback( '|https?://[^"]+|im', 'sosimple_oembed_youtube_wmode_parameter', $html );
 				}
 
 				$html = $wrapped;
@@ -70,13 +70,13 @@ function so_simple_embed_html( $html, $url = null ) {
 
 	return $html;
 }
-add_filter( 'embed_oembed_html', 'so_simple_embed_html', 10, 2 );
-add_filter( 'video_embed_html', 'so_simple_embed_html' ); // Jetpack
+add_filter( 'embed_oembed_html', 'sosimple_embed_html', 10, 2 );
+add_filter( 'video_embed_html', 'sosimple_embed_html' ); // Jetpack
 
 
 /**
  * Add wmode=transparent to YouTube videos to fix z-indexing issue
  */
-function so_simple_oembed_youtube_wmode_parameter( $matches ) {
+function sosimple_oembed_youtube_wmode_parameter( $matches ) {
 	return add_query_arg( 'wmode', 'transparent', $matches[0] );
 }

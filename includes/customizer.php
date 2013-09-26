@@ -10,7 +10,7 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function so_simple_customize_register( $wp_customize ) {
+function sosimple_customize_register( $wp_customize ) {
 	/*
 	 * Creat theme seciton to hold our options.
 	 */
@@ -110,13 +110,13 @@ function so_simple_customize_register( $wp_customize ) {
 		'priority' => 30,
 	) );
 }
-add_action( 'customize_register', 'so_simple_customize_register' );
+add_action( 'customize_register', 'sosimple_customize_register' );
 
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function so_simple_customize_preview_js() {
-	wp_enqueue_script( 'so-simple-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), so_simple_version_id(), true );
+function sosimple_customize_preview_js() {
+	wp_enqueue_script( 'so-simple-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), sosimple_version_id(), true );
 }
-add_action( 'customize_preview_init', 'so_simple_customize_preview_js' );
+add_action( 'customize_preview_init', 'sosimple_customize_preview_js' );

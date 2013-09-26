@@ -22,7 +22,7 @@ require( get_template_directory() . '/includes/admin/metabox.php' );
 /**
  * Update Metabox Post Meta
  */
-function so_simple_update_post_meta_field( $fields, $post_id ) {
+function sosimple_update_post_meta_field( $fields, $post_id ) {
 	foreach ( $fields as $field ) {
 		if ( isset( $_POST[ $field ] ) && ! empty( $_POST[ $field ] ) ) {
 			if ( is_string( $_POST[$field] ) ) {
@@ -46,7 +46,7 @@ function so_simple_update_post_meta_field( $fields, $post_id ) {
 /**
  * Custom checked function, allows for an array to be passed.
  */
-function so_simple_checked( $haystack, $current, $echo = true ) {
+function sosimple_checked( $haystack, $current, $echo = true ) {
 	if ( is_array( $haystack ) && in_array( $current, $haystack ) ) {
 		$current = $haystack = 1;
 	}

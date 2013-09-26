@@ -10,7 +10,7 @@
 
 		<?php endwhile; ?>
 
-		<?php so_simple_pagination(); ?>
+		<?php sosimple_pagination(); ?>
 
 	<?php else : ?>
 

@@ -2,18 +2,18 @@
 /**
  * Render Featured Video Meta Box
  */
-function so_simple_render_post_options_mb( $post ) {
+function sosimple_render_post_options_mb( $post ) {
 	// Nonce to verify intention later
-	wp_nonce_field( 'so_simple_post_video_mb_save', 'so_simple_post_video_mb_nonce' );
+	wp_nonce_field( 'sosimple_post_video_mb_save', 'sosimple_post_video_mb_nonce' );
 	// Fields are attached with hooks
-	do_action( 'so_simple_post_options_mb_fields', $post->ID );
+	do_action( 'sosimple_post_options_mb_fields', $post->ID );
 }
 
 
 /**
  * Permalink Override
  */
-function so_simple_permalink_override_mb_field( $post_id ) { 
+function sosimple_permalink_override_mb_field( $post_id ) { 
 	$field_name = 'permalink_override';
 	$value = get_post_meta( $post_id, $field_name, true ); ?>
 	<p>
@@ -22,13 +22,13 @@ function so_simple_permalink_override_mb_field( $post_id ) {
 	</p>
 	
 <?php }
-add_action( 'so_simple_post_options_mb_fields', 'so_simple_permalink_override_mb_field', 10 );
+add_action( 'sosimple_post_options_mb_fields', 'sosimple_permalink_override_mb_field', 10 );
 
 
 /**
  * Text Color
  */
-function so_simple_text_color_mb_field( $post_id ) { 
+function sosimple_text_color_mb_field( $post_id ) { 
 	$field_name = 'text_color';
 	$value = get_post_meta( $post_id, $field_name, true ); ?>
 	<p>
@@ -51,17 +51,17 @@ function so_simple_text_color_mb_field( $post_id ) {
 		</select>	
 	</p>
 <?php }
-add_action( 'so_simple_post_options_mb_fields', 'so_simple_text_color_mb_field', 10 );
+add_action( 'sosimple_post_options_mb_fields', 'sosimple_text_color_mb_field', 10 );
 
 
 /**
  * Save Video Metabox Values
  */
-function so_simple_post_video_mb_save( $post_id ) {
+function sosimple_post_video_mb_save( $post_id ) {
 	global $post;
 
 	// verify nonce
-	if ( ! isset( $_POST['so_simple_post_video_mb_nonce'] ) || ! wp_verify_nonce( $_POST['so_simple_post_video_mb_nonce'], 'so_simple_post_video_mb_save' ) ) 
+	if ( ! isset( $_POST['sosimple_post_video_mb_nonce'] ) || ! wp_verify_nonce( $_POST['sosimple_post_video_mb_nonce'], 'sosimple_post_video_mb_save' ) ) 
 		return;
 
 	// check autosave
@@ -77,13 +77,13 @@ function so_simple_post_video_mb_save( $post_id ) {
 		return;		
 	
 	// these are the default fields that get saved
-	$fields = apply_filters( 'so_simple_post_video_mb_save', array(
+	$fields = apply_filters( 'sosimple_post_video_mb_save', array(
 		'permalink_override',
 		'text_color',
 	) );
 
-	so_simple_update_post_meta_field( $fields, $post_id );
+	sosimple_update_post_meta_field( $fields, $post_id );
 
 }
-add_action( 'save_post', 'so_simple_post_video_mb_save' );
+add_action( 'save_post', 'sosimple_post_video_mb_save' );
 

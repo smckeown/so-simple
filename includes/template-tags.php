@@ -5,11 +5,11 @@
  * @package So Simple
  */
 
-if ( ! function_exists( 'so_simple_pagination' ) ) :
+if ( ! function_exists( 'sosimple_pagination' ) ) :
 /**
  * Print the previous and next links depending on the current template.
  */
-function so_simple_pagination() {
+function sosimple_pagination() {
 	global $wp_query;
 
 	if ( is_single() ) { ?>
@@ -26,11 +26,11 @@ function so_simple_pagination() {
 endif;
 
 
-if ( ! function_exists( 'so_simple_posted_on' ) ) :
+if ( ! function_exists( 'sosimple_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function so_simple_posted_on() {
+function sosimple_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
@@ -58,39 +58,39 @@ function so_simple_posted_on() {
 endif;
 
 
-if ( ! function_exists( 'so_simple_twitter_link' ) ) :
+if ( ! function_exists( 'sosimple_twitter_link' ) ) :
 /**
  * Display twitter link on single posts pages.
  *
- * @uses so_simple_reply_to_twitter_link()
- * @uses so_simple_reply_hashtags_twitter_link()
- * @uses so_simple_share_twitter_link()
+ * @uses sosimple_reply_to_twitter_link()
+ * @uses sosimple_reply_hashtags_twitter_link()
+ * @uses sosimple_share_twitter_link()
  */
-function so_simple_twitter_link( $type, $post = null  ) {
+function sosimple_twitter_link( $type, $post = null  ) {
 	$post = get_post( $post );
 	
 	switch ( $type ) {
 		case 'share':
-			so_simple_share_twitter_link( $post );
+			sosimple_share_twitter_link( $post );
 			break;
 		case 'reply-to':
-			so_simple_reply_to_twitter_link( $post );
+			sosimple_reply_to_twitter_link( $post );
 			break;
 		case 'reply-feed':
-			so_simple_reply_feed_twitter_link( $post );
+			sosimple_reply_feed_twitter_link( $post );
 			break;
 	}
 }
 endif;
 
 
-if ( ! function_exists( 'so_simple_share_twitter_link' ) ) :
+if ( ! function_exists( 'sosimple_share_twitter_link' ) ) :
 /**
  * Display an HTML link to share a post on Twitter.
  *
  * @param int|object $post Optional post ID or object. Default is global $post object.
  */
-function so_simple_share_twitter_link( $post = null ) {
+function sosimple_share_twitter_link( $post = null ) {
 	$post = get_post( $post );
 	
 	$text = sprintf( __( "I'm reading %s", 'so-simple-i18n' ), wp_strip_all_tags( get_the_title( $post->ID ) ) );
@@ -111,13 +111,13 @@ function so_simple_share_twitter_link( $post = null ) {
 endif;
 
 
-if ( ! function_exists( 'so_simple_reply_to_twitter_link' ) ) :
+if ( ! function_exists( 'sosimple_reply_to_twitter_link' ) ) :
 /**
  * Display an HTML link to reply to a user in a post on Twitter.
  *
  * @param int|object $post Optional post ID or object. Default is global $post object.
  */
-function so_simple_reply_to_twitter_link( $post = null ) {
+function sosimple_reply_to_twitter_link( $post = null ) {
 	$screen_name = get_the_author_meta( 'twitter' );
 	
 	// Bail early if a the authors Twitter username is not set in their profile. 
@@ -145,18 +145,18 @@ function so_simple_reply_to_twitter_link( $post = null ) {
 	);
 
 	// Print tweet intent JS script
-	so_simple_tweet_intent_script();
+	sosimple_tweet_intent_script();
 }
 endif;
 
 
-if ( ! function_exists( 'so_simple_reply_feed_twitter_link' ) ) :
+if ( ! function_exists( 'sosimple_reply_feed_twitter_link' ) ) :
 /**
  * Display an HTML link to add hashtags to a post on Twitter.
  *
  * @param int|object $post Optional post ID or object. Default is global $post object.
  */
-function so_simple_reply_feed_twitter_link( $post = null ) {
+function sosimple_reply_feed_twitter_link( $post = null ) {
 	$screen_name = get_the_author_meta( 'twitter' );
 	
 	// Bail early if a the authors Twitter username is not set in their profile. 
