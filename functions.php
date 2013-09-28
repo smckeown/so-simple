@@ -36,9 +36,6 @@ function sosimple_setup() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
-
-	// Add support for post thumbnails and register custom image sizes.
-	add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'sosimple_setup' );
 
@@ -102,3 +99,10 @@ require( get_template_directory() . '/includes/customizer.php' );
 if ( is_admin() ) {
 	require( get_template_directory() . '/includes/admin/admin.php' );
 }
+
+
+/**
+ * Load Add-ons
+ */
+require( get_template_directory() . '/add-ons/background-images/background-images.php' );
+require( get_template_directory() . '/add-ons/custom-permalinks/custom-permalinks.php' );
