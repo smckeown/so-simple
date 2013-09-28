@@ -7,11 +7,11 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'js-item-as-link' ); ?>>
 	
 	<?php
-	// @todo Use JS to link entire item. This will allow links in the post to stil work.
-	$permalink_override = get_post_meta( get_the_ID(), 'permalink_override', true );
-
-	$permalink = $permalink_override ? $permalink_override : get_permalink();
-	$target    = $permalink_override ? 'target="_blank"' : '';
+	$permalink = apply_filters( 'sosimple_content_permalink', get_permalink() );
+	
+	// Permalinks can be overridden with 'sosimple_content_permalink' filter.
+	// Open link in a new window if permalink does not match the current pages permalink.
+	$target = ( $permalink != get_permalink() ) ? 'target="_blank"' : '';
 	?>
 
 	<header class="entry-header">
