@@ -29,7 +29,7 @@ add_filter( 'sosimple_post_options_mb_save', 'sosimple_custom_permalink_mb_save'
  */
 function sosimple_custom_permalink( $permalink ) {
 	if ( $custom_permalink = get_post_meta( get_the_ID(), 'custom_permalink', true ) ) {
-		$permalink = $custom_permalink
+		$permalink = $custom_permalink;
 	}
 
 	return $permalink;
