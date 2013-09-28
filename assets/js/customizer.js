@@ -5,13 +5,4 @@
  */
  
 ( function( $ ) {
-	// Intro background color
-	wp.customize( 'intro_background_color', function( value ) {
-	console.log('loaded');
-		value.bind( function( to ) {
-			$( '.site-header .entry' ).css( {
-				'background': to
-			} );
-		} );
-	} );
 } )( jQuery );

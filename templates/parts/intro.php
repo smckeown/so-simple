@@ -12,6 +12,7 @@ setup_postdata( $post );
 $class = get_theme_mod( 'intro_text_color' );
 $style = 'style="background-color:' . get_theme_mod( 'intro_background_color' ) . ';"';
 ?>
+
 <header id="masthead" class="site-header" role="banner">
 	<article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?> <?php echo $style; ?>>
 		

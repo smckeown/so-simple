@@ -11,7 +11,9 @@ jQuery( function( $ ) {
 
 		window.open( popupUrl, popupId, 'width=' + popupWidth + ',height=' + popupHeight + ',directories=no,location=no,menubar=no,scrollbars=no,status=no,toolbar=no' );
 	} );
+});
 
+jQuery( function( $ ) {
 	// Allow a element to be clicked anywhere to access the permalink page.
 	$( '.js-item-as-link' ).css( 'cursor', 'pointer' ).on( 'click', ':not(a)', function( e ) {
 		var $link  = $( this ).closest( '.js-item-as-link' ).find( 'a' );
@@ -23,5 +25,5 @@ jQuery( function( $ ) {
 		} else {
 			window.location = url;
 		}
-	});	
+	});
 });

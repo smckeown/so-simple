@@ -9,6 +9,7 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+		<meta name="generator" content="<?php echo esc_attr( sprintf( __( 'So Simple (%s) - Designed and built by Press75', 'sosimple' ), THEME_VERSION ) ); ?>">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
