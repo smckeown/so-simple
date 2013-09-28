@@ -16,7 +16,7 @@ add_action( 'after_setup_theme', 'sosimple_setup_background_images' );
 function sosimple_enqueue_background_images() {
 	$background_images = array();
 
-	// Loop through 
+	// Loop through
 	while ( have_posts() ) : the_post();
 		if ( $thumbnail_id = get_post_thumbnail_id() ) {
 			// Show large image sizes on single pages
@@ -30,13 +30,16 @@ function sosimple_enqueue_background_images() {
 		}
 	endwhile;
 
-	wp_enqueue_style( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/css/style.css' );
-	wp_enqueue_script( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/js/script.js', array( 'jquery' ), '1.2.0', true );
-
-	// Localize background images for use in JS
-	wp_localize_script( 'sosimple-background-images', 'sosimpleL10n', array( 
-		'background_images' => $background_images,
-	) );
+	// Enqueue scripts and styles if there are posts with background images.
+	if ( $background_images ) :
+		wp_enqueue_style( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/css/style.css' );
+		wp_enqueue_script( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/js/script.js', array( 'jquery' ), '1.2.0', true );
+		
+		// Localize background images for use in JS
+		wp_localize_script( 'sosimple-background-images', 'sosimpleL10n', array( 
+			'background_images' => $background_images,
+		) );
+	endif;
 }
 add_action( 'wp_enqueue_scripts', 'sosimple_enqueue_background_images' );
 
