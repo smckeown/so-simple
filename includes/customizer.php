@@ -15,7 +15,8 @@ function sosimple_customize_register( $wp_customize ) {
 	 * Creat theme seciton to hold our options.
 	 */
 	$wp_customize->add_section( 'theme', array(
-		'title' => __( 'Theme', 'sosimple' ),
+		'title'    => __( 'Theme Options', 'sosimple' ),
+		'priority' => 120,
 	) );
 
 	/*
