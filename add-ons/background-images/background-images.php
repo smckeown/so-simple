@@ -54,4 +54,4 @@ function sosimple_add_background_images_post_class( $classes, $class, $post_id )
 
 	return $classes;
 }
-add_filter( 'post_class', 'sosimple_add_background_images_post_class' );
+add_filter( 'post_class', 'sosimple_add_background_images_post_class', 10, 3 );
