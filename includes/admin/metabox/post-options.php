@@ -22,8 +22,8 @@ function sosimple_text_color_mb_field( $post_id ) {
 		<select name="<?php echo esc_attr( $field_name ); ?>" id="<?php echo esc_attr( $field_name ); ?>" class="widefat">
 			<?php 
 			$options = array(
-				'text-light' => __( 'Light Text', 'debut' ),
 				'text-dark'  => __( 'Dark Text', 'debut' ),
+				'text-light' => __( 'Light Text', 'debut' ),
 			);
 						
 			foreach( $options as $option => $label ): 
