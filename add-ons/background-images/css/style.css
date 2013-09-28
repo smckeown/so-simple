@@ -1,0 +1,60 @@
+/**
+ * Background Image: Light Styles
+ * ----------------------------------------------------------------------------
+ */
+
+.text-light.has-thumbnail,
+.text-dark.has-thumbnail {
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.text-light.has-thumbnail ::selection,
+.text-light.has-thumbnail ::-moz-selection,
+.text-dark.has-thumbnail ::selection,
+.text-dark.has-thumbnail ::-moz-selection { 
+	background: #ffffff; 
+}
+
+.text-light.has-thumbnail .entry-content {
+	color: rgba(255, 255, 255, 0.90);
+}
+
+.text-light.has-thumbnail h1,
+.text-light.has-thumbnail h2 {
+	color: #ffffff;
+}
+
+.text-light.has-thumbnail .entry-content a {
+	background-color: rgba(255, 255, 254, 0.1);
+	color: rgba(255, 255, 255, 0.90);
+}
+
+.text-light.has-thumbnail .entry-content a:hover {
+	background-color: rgba(255, 255, 254, 0.2);
+	color: rgba(255, 255, 255, 0.80);
+}
+
+.text-light.has-thumbnail .entry-content ul,
+.text-light.has-thumbnail .entry-content ol {
+	color: rgba(255, 255, 255, 0.80);
+}
+
+.text-light.has-thumbnail .entry-content blockquote {
+	border-left: 5px solid rgba(255, 255, 255, 0.60);
+	color: rgba(255, 255, 255, 0.80);
+}
+
+.text-light.has-thumbnail ul.entry-meta,
+.text-light.has-thumbnail ul.entry-meta a {
+	color: rgba(255, 255, 255, 0.80);
+}
+
+.text-light.has-thumbnail ul.entry-meta a:hover {
+	color: rgba(255, 255, 255, 0.80);
+}
+
+.text-light.has-thumbnail .single-nav,
+.text-light.has-thumbnail .single-nav a,
+.text-light.has-thumbnail .single-nav a:hover {
+	background-color: rgba(255, 255, 255, 0.10);
+}
