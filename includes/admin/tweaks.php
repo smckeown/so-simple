@@ -63,11 +63,6 @@ add_action( 'init', 'sosimple_remove_commment_post_type_support' );
  * Remove Post meta boxes
  */
 function sosimple_remove_meta_boxes() {
-	// Tags are used for the Twitter Reply Feed option, don't remove if enabled
-	if ( 'reply-feed' != get_theme_mod( 'twitter_link_type' ) ) {
-		remove_meta_box( 'tagsdiv-post_tag', 'post', 'side' ); // tags
-	}
-
 	remove_meta_box( 'categorydiv',      'post', 'side' );   // Categories
 	remove_meta_box( 'postexcerpt',      'post', 'normal' ); // Excerpt
 	remove_meta_box( 'trackbacksdiv',    'post', 'normal' ); // Trackbacks

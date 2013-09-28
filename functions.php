@@ -106,3 +106,4 @@ if ( is_admin() ) {
  */
 require( get_template_directory() . '/add-ons/background-images/background-images.php' );
 require( get_template_directory() . '/add-ons/custom-permalinks/custom-permalinks.php' );
+require( get_template_directory() . '/add-ons/twitter-replies/twitter-replies.php' );

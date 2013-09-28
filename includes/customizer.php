@@ -88,28 +88,6 @@ function sosimple_customize_register( $wp_customize ) {
 		),
 		'priority' => 25,
 	) );
-
-
-	/*
-	 * Twitter Links
-	 */
-	$wp_customize->add_setting( 'twitter_link_type', array(
-		'sanitize_callback' => 'sanitize_text_field',
-	) );
-
-	$wp_customize->add_control( 'twitter_link_type', array(
-		'label'    => __( 'Twitter Link Type', 'sosimple' ),
-		'section'  => 'theme',
-		'settings' => 'twitter_link_type',
-		'type'     => 'select',
-		'choices'  => array(
-			''           => __( '— Select —', 'sosimple' ),
-			'share'      => __( 'Share post', 'sosimple' ),
-			'reply-to'   => __( 'Reply to author', 'sosimple' ),
-			'reply-feed' => __( 'Twitter reply feed', 'sosimple' ),
-		),
-		'priority' => 30,
-	) );
 }
 add_action( 'customize_register', 'sosimple_customize_register' );
 
