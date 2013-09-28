@@ -39,6 +39,17 @@ add_filter( 'wp_title', 'sosimple_wp_title', 10, 2 );
 
 
 /**
+ * Add additional post class values
+ */
+function sosimple_post_class( $classes ) {
+	// Adds text color class name; text-light, text-dark
+	$classes[] = get_post_meta( get_the_ID(), 'text_color', true );
+	return $classes;
+}
+add_filter( 'post_class', 'sosimple_post_class' );
+
+
+/**
  * Adds a wrapper to videos from the whitelisted services and attempts to add
  * the wmode parameter to YouTube videos and flash embeds.
  *
