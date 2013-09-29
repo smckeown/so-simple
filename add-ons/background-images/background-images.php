@@ -33,11 +33,11 @@ function sosimple_enqueue_background_images() {
 	// Enqueue scripts and styles if there are posts with background images.
 	if ( $background_images ) :
 		wp_enqueue_style( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/css/style.css' );
-		wp_enqueue_script( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/js/script.js', array( 'jquery' ), '1.2.0', true );
+		wp_enqueue_script( 'sosimple-background-images', get_template_directory_uri() . '/add-ons/background-images/js/script.js', array( 'jquery' ), sosimple_version_id(), true );
 		
 		// Localize background images for use in JS
 		wp_localize_script( 'sosimple-background-images', 'sosimpleL10n', array( 
-			'background_images' => $background_images,
+			'backgroundImages' => $background_images,
 		) );
 	endif;
 }

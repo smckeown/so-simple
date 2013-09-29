@@ -21,7 +21,7 @@
  * Initialize Background Images
  */
 jQuery( function( $ ) {
-	var backgroundImages = sosimpleL10n.background_images;
+	var backgroundImages = sosimpleL10n.backgroundImages;
 		
 	if ( backgroundImages != '' ) {
 		var $body = $( 'body' );
@@ -32,7 +32,7 @@ jQuery( function( $ ) {
 				$post = $( '#post-' + index );
 				$post.anystretch( value, { speed: 400 } );
 			} else {
-				$.anystretch( value, { speed: 400 } )
+				$.anystretch( value, { speed: 400 } );
 			}
 		});
 	}
