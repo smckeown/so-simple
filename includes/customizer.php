@@ -73,7 +73,7 @@ function sosimple_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'intro_background_color' )->transport = 'postMessage';
 
 	$wp_customize->add_setting( 'intro_text_color', array(
-		'default'           => 'text-light',
+		'default'           => 'text-dark',
 		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
@@ -83,8 +83,8 @@ function sosimple_customize_register( $wp_customize ) {
 		'settings' => 'intro_text_color',
 		'type'     => 'select',
 		'choices'  => array(
-			'text-light' => __( 'Light Text', 'sosimple' ),
 			'text-dark'  => __( 'Dark Text', 'sosimple' ),
+			'text-light' => __( 'Light Text', 'sosimple' ),
 		),
 		'priority' => 25,
 	) );
