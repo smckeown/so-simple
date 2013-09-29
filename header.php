@@ -23,9 +23,9 @@
 		<div id="page" class="hfeed site">
 
 			<?php if ( is_home() && ! is_paged() && get_theme_mod( 'intro_page' ) ) : ?>
-				
+
 				<?php get_template_part( 'templates/parts/intro' ); ?>
-			
+
 			<?php endif; ?>
 
 			<section id="content" class="site-content">
