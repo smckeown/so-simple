@@ -33,7 +33,7 @@ function sosimple_update_post_meta_field( $fields, $post_id ) {
 				$new = $_POST[ $field ];
 			}
 
-			$new = apply_filters( 'debut_metabox_save_' . $field, $new );
+			$new = apply_filters( 'sosimple_metabox_save_' . $field, $new );
 			
 			update_post_meta( $post_id, $field, $new );
 		} else {
