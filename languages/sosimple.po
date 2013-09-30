@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: So Simple\n"
+"POT-Creation-Date: 2013-09-30 05:45-0600\n"
+"PO-Revision-Date: 2013-09-30 05:45-0600\n"
+"Last-Translator: \n"
+"Language-Team: Press75\n"
+"Language: PHP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: header.php:12
+#, php-format
+msgid "So Simple (%s) - Designed and built by Press75"
+msgstr ""
+
+#: add-ons/custom-permalinks/custom-permalinks.php:9
+msgid "Custom Permalink"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:53
+#, php-format
+msgid "I'm reading %s"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:65
+msgid "Share on Twitter"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:83
+#: add-ons/twitter-replies/twitter-replies.php:122
+msgid "A <strong>Twitter ID</strong> is not set for this author."
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:89
+#, php-format
+msgid "Re: %s"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:162
+msgid "Twitter Link Type"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:167
+msgid " Select "
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:168
+msgid "Share post"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:169
+msgid "Reply to author"
+msgstr ""
+
+#: add-ons/twitter-replies/twitter-replies.php:170
+msgid "Twitter reply feed"
+msgstr ""
+
+#: includes/customizer.php:18
+msgid "Theme Options"
+msgstr ""
+
+#: includes/customizer.php:31
+msgid "Disable So Simple admin tweaks"
+msgstr ""
+
+#: includes/customizer.php:49
+msgid "Page for Intro"
+msgstr ""
+
+#: includes/customizer.php:81
+msgid "Intro Text Color"
+msgstr ""
+
+#: includes/customizer.php:86 includes/admin/metabox/post-options.php:25
+msgid "Dark Text"
+msgstr ""
+
+#: includes/customizer.php:87 includes/admin/metabox/post-options.php:26
+msgid "Light Text"
+msgstr ""
+
+#: includes/extras.php:34
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: includes/template-tags.php:45
+#, php-format
+msgid ""
+"<span class=\"posted-on\">%1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr ""
+
+#: includes/template-tags.php:53
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: includes/admin/metabox.php:13
+msgid "Post Options"
+msgstr ""
+
+#: includes/admin/metabox/post-options.php:21
+msgid "Text Color"
+msgstr ""
+
+#: templates/parts/content-page.php:17 templates/parts/content-single.php:17
+#: templates/parts/content.php:25
+msgid "Pages:"
+msgstr ""
+
+#: templates/parts/content.php:22
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: templates/parts/entry-meta.php:4
+msgid "Edit"
+msgstr ""
+
+#: templates/parts/no-results.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: templates/parts/no-results.php:19
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: templates/parts/no-results.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: templates/parts/no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
