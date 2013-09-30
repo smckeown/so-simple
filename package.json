@@ -1,0 +1,17 @@
+{
+	"name": "SoSimple",
+	"slug": "so-simple",
+	"version": "2.0.0",
+	"description": "For beautiful text and absolutely nothing more. It's so simple.",
+	"main": "Gruntfile.js",
+	"repository": {
+		"type": "git",
+		"url": "https://bitbucket.org/press75/so-simple.git"
+	},
+	"dependencies": {
+		"grunt": "~0.4.1",
+		"grunt-contrib-compress": "~0.4.10",
+		"grunt-contrib-jshint": "~0.2.0",
+		"grunt-contrib-watch": "~0.3.1"
+	}
+}
