@@ -11,11 +11,11 @@
 	
 	// Permalinks can be overridden with 'sosimple_content_permalink' filter.
 	// Open link in a new window if permalink does not match the current pages permalink.
-	$target = ( $permalink != get_permalink() ) ? 'target="_blank"' : '';
+	$target = ( $permalink != get_permalink() ) ? ' target="_blank" ' : '';
 	?>
 
 	<header class="entry-header">
-		<h1 class="entry-title"><a href="<?php echo esc_url( $permalink ); ?>" <?php echo $target; ?> rel="bookmark"><?php the_title(); ?></a></h1>
+		<?php the_title( '<h1 class="entry-title"><a href="' . esc_url( $permalink ) . '"' . $target . 'rel="bookmark">', '<h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content content">
