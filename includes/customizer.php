@@ -12,14 +12,14 @@
  */
 function sosimple_customize_register( $wp_customize ) {
 	/*
-	 * Creat theme seciton to hold our options.
+	 * Create theme seciton to hold our options.
 	 */
 	$wp_customize->add_section( 'theme', array(
 		'title'    => __( 'Theme Options', 'sosimple' ),
 		'priority' => 120,
 	) );
 
-	/*
+	/**
 	 * Admin
 	 */
 
@@ -36,7 +36,7 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 
 
-	/*
+	/**
 	 * Intro
 	 */
 
@@ -54,7 +54,7 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 
 
-	/*
+	/**
 	 * Colors
 	 */
 
@@ -90,12 +90,3 @@ function sosimple_customize_register( $wp_customize ) {
 	) );
 }
 add_action( 'customize_register', 'sosimple_customize_register' );
-
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function sosimple_customize_preview_js() {
-	wp_enqueue_script( 'sosimple-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), sosimple_version_id(), true );
-}
-add_action( 'customize_preview_init', 'sosimple_customize_preview_js' );
