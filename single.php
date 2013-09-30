@@ -7,16 +7,16 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main" role="main">
+<main id="main" class="site-main" role="main">
 
-		<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'templates/parts/content', 'single' ); ?>
+		<?php get_template_part( 'templates/parts/content', 'single' ); ?>
 
-			<?php sosimple_pagination(); ?>
+		<?php sosimple_pagination(); ?>
 
-		<?php endwhile; ?>
+	<?php endwhile; ?>
 
-	</main><!-- #main -->
+</main><!-- #main -->
 
 <?php get_footer(); ?>
