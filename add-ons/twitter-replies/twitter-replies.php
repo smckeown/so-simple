@@ -164,7 +164,7 @@ function sosimple_twitter_replies_customize_register( $wp_customize ) {
 		'settings' => 'twitter_link_type',
 		'type'     => 'select',
 		'choices'  => array(
-			''           => __( '— Select —', 'sosimple' ),
+			''           => '&mdash;' . __( ' Select ', 'sosimple' ) . '&mdash;',
 			'share'      => __( 'Share post', 'sosimple' ),
 			'reply-to'   => __( 'Reply to author', 'sosimple' ),
 			'reply-feed' => __( 'Twitter reply feed', 'sosimple' ),
